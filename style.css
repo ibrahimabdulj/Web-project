@@ -103,6 +103,7 @@ h4 {
     background-image: url(images/bg-card-front.png);
     border-radius: 10;
     position: relative;
+    border-radius: 5px;
 }
 
 .frontcard img {
@@ -124,7 +125,7 @@ h4 {
 
 .digit {
     font-size: larger;
-    margin-top: 10%;
+    margin-top: 10vw;
     margin-left: 20%;
 }
 
@@ -143,6 +144,7 @@ h4 {
     height: 30vh;
     z-index: 1;
     position: relative;
+    border-radius: 5px;
 }
 
 .num {
@@ -171,10 +173,6 @@ button {
 button:hover {
     color: black;
     background-color: white;
-}
-
-form {
-    /* display: none; */
 }
 
 .err {
@@ -237,36 +235,37 @@ form {
     .main {
         display: flex;
         flex-direction: column;
-        width: 100vw;
+        width: 90vw;
         height: 97vh;
-        margin: 0px;
+        margin: 5px;
         padding: 0px;
+        /* border: 1px solid red; */
     }
     .colored {
         background-image: url(images/bg-main-mobile.png);
         display: flex;
         flex-direction: column-reverse;
-        width: 100vw;
+        width: 80vw;
         height: 30vh;
         position: relative;
     }
     .white {
         margin: 0px;
-        width: 100vw;
+        width: 80vw;
         height: 70vh;
     }
     .frontcard {
         position: absolute;
-        width: 220px;
+        width: 70vw;
         height: 120px;
         z-index: 2;
         top: 25px;
-        left: 10;
+        right: 5vw;
         position: relative;
     }
     .frontcard img {
         position: absolute;
-        width: 60px;
+        width: 3vw;
     }
     .txt {
         width: 100%;
@@ -275,11 +274,14 @@ form {
     }
     .cardback {
         position: absolute;
-        width: 220px;
+        width: 70vw;
         height: 120px;
         top: 10px;
-        right: 10px;
+        right: 5px;
         background-size: cover;
+    }
+    .digit {
+        top: 20px;
     }
 }
 

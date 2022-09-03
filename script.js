@@ -17,9 +17,19 @@ const done = document.getElementsByClassName("done")[0];
 const continue1 = document.getElementById("continue");
 
 continue1.addEventListener('click', e => {
-    window.location.reload();
-    // form.style.display = "block";
-    // done.style.display = "none";
+    // window.location.reload();
+    yr.innerText = "00";
+    mnt.innerText = "00";
+    num.innerText = "000";
+    digit.innerText = cardnumber.value;
+    name.innerText = "Jane Appleseed";
+    digit.innerText = "0000 0000 0000 0000";
+    form.style.display = "block";
+    done.style.display = "none";
+    // cardname.innerText = " ";
+    // cardnumber.innerText = " ";
+    // month.value.innerText = " ";
+    // year.innerText = " ";
 })
 
 
@@ -36,12 +46,17 @@ cardnumber.addEventListener('input', (e) => {
         digit.innerText = "0000 0000 0000 0000";
         return;
     }
+    if (e.target.value.length > cardnumber.maxLength) {
+        cardnumber.value = cardnumber.value.slice(0, cardnumber.maxLength)
+        return;
+    }
     cardnumber.value = e.target.value;
     cardnumber.value.length < 16 ? (error.innerText = "card numbers must be 16") : (error.innerText = "");
     cardnumber.style.border = "1px solid #d4d4d4";
     cardnumber.style.borderRadius = "5px";
 });
 
+const format = (str) => str.match(/.{1,4}/g).join(" ");
 let state = false;
 cardnumber.addEventListener('mouseout', (e) => {
     if (state) return;
@@ -50,7 +65,6 @@ cardnumber.addEventListener('mouseout', (e) => {
 });
 
 
-const format = (str) => str.match(/.{1,4}/g).join(" ");
 
 month.addEventListener('input', (e) => {
     if (e.target.value.length < 1) {
