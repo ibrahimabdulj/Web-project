@@ -8,7 +8,7 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: rgba(251, 248, 248, 0.929);
+    background-color: rgba(171, 168, 168, 0.98);
 }
 
 .main {
@@ -119,7 +119,7 @@ h4 {
     font-family: 'Courier New', Courier, monospace;
     position: absolute;
     width: 100%;
-    margin-top: 75px;
+    margin-top: -15px;
     /* border: 1px solid red; */
 }
 
@@ -189,6 +189,10 @@ button:hover {
 }
 
 #error2 {
+    color: red;
+}
+
+#error5 {
     color: red;
 }
 

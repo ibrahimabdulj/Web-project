@@ -11,6 +11,7 @@ const form = document.querySelector('#form');
 const cvc = document.querySelector('.cvc')
 const num = document.querySelector('.num')
 const error = document.getElementById("error");
+const error5 = document.getElementById("error5");
 const error1 = document.getElementById("error1");
 const error2 = document.getElementById("error2");
 const done = document.getElementsByClassName("done")[0];
@@ -38,10 +39,20 @@ cardname.addEventListener('input', (e) => {
         name.innerText = "Jane Appleseed";
         return;
     }
-
 })
 
 cardnumber.addEventListener('input', (e) => {
+    let regex = /^[0-9]+$/;
+    if (!cardnumber.value.split(" ").join("").match(regex)) {
+        cardnumber.style.border = "1px solid red";
+        cardnumber.style.borderRadius = "5px";
+        error.innerText = "Wrong format, numbers only";
+        return;
+    } else {
+        cardnumber.style.border = "1px solid #d4d4d4";
+        cardnumber.style.borderRadius = "5px";
+        error.innerText = "";
+    }
     if (e.target.value.length < 1) {
         digit.innerText = "0000 0000 0000 0000";
         return;
@@ -82,16 +93,15 @@ year.addEventListener('input', (e) => {
 
 confirm.addEventListener('click', (e) => {
     e.preventDefault();
-    let regex = /^[0-9]+$/;
-    if (!cardnumber.value.split(" ").join("").match(regex)) {
-        cardnumber.style.border = "1px solid red";
-        cardnumber.style.borderRadius = "5px";
-        error.innerText = "Wrong format, numbers only";
-        return;
-    } else {
+    if (cardname.value.length < 1) {
+        cardname.style.border = "1px solid #d4d4d4";
+        cardname.style.borderRadius = "5px";
+        error5.innerText = "Can't be blank";
+    }
+    if (cardnumber.value.length < 1) {
         cardnumber.style.border = "1px solid #d4d4d4";
         cardnumber.style.borderRadius = "5px";
-        error.innerText = "";
+        error.innerText = "Can't be blank";
     }
     if (month.value.length < 1) {
         month.style.border = "1px solid red";
